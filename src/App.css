@@ -75,8 +75,8 @@ header nav ul li a:visited {
 .search-bar {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px 2fr 2fr 100px 100px 60px 60px;
-      grid-template-columns: 50px 2fr 2fr 100px 100px 60px 60px;
+  -ms-grid-columns: 50px 2fr 2fr 150px 100px 60px 60px;
+      grid-template-columns: 50px 2fr 2fr 150px 100px 60px 60px;
   place-items: center;
   height: 43px;
   width: 90%;
@@ -138,7 +138,7 @@ header nav ul li a:visited {
 
 .search-bar .fa {
   font-size: 22px;
-  color: #3b3b3b;
+  color: #444444;
 }
 
 .search-bar .fa:hover {
