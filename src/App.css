@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 64px;
+  border-bottom: solid 1px #adadad;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+header .google-fonts-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .google-fonts-title h1 {
+  font-size: 22px;
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+header .google-fonts-title .google-logo {
+  background-image: url(https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_dark_color_74x24dp.png);
+  width: 74px;
+  height: 24px;
+  opacity: 0.6;
+  position: relative;
+  bottom: -1px;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  line-height: 64px;
+}
+
+header nav ul li {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+header nav ul li a {
+  text-decoration: none;
+}
+
+header nav ul li a:visited {
+  color: black;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/*# sourceMappingURL=app.css.map */
