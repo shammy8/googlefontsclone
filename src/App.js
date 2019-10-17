@@ -26,10 +26,6 @@ function App() {
     setUserInput({ fontSize: "20px" });
   };
 
-  const scrollUp = () => {
-    window.scrollTo(0, 0);
-  };
-
   return (
     <div>
       <Navbar />
@@ -48,7 +44,12 @@ function App() {
         fontSize={userInput.fontSize}
       />
 
-      <div className="to-top" onClick={scrollUp}>
+      <div
+        className="to-top"
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
+      >
         <div className="fa fa-long-arrow-up"></div>
       </div>
 
