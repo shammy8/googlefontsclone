@@ -149,6 +149,47 @@ header nav ul li a:visited {
   cursor: auto;
 }
 
+.fontcards-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.fontcards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 40px;
+  width: 90%;
+  margin: 30px auto;
+}
+
+.fontcard {
+  border-top: #adadad solid 1px;
+  width: 100%;
+  height: 350px;
+  padding: 15px 5px;
+}
+
+.fontcard .font-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+.fontcard .fa {
+  color: red;
+  font-size: 22px;
+  cursor: pointer;
+}
+
 footer {
   text-align: center;
   font-size: 14px;
