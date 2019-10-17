@@ -1,35 +1,46 @@
 import React from "react";
 import FontCard from "./FontCard";
 
-function Main() {
+function Main({ searchFonts, typeSomething, fontSize }) {
   // https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBNl7lcNRNpxnZNrKVoDnoCXrN5a8jpCas&sort=popularity
   return (
     <div className="fontcards-container">
       <div className="fontcards">
         <FontCard
           family="Roboto"
-          text="Hello World"
-          files="http://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5WZLCzYlKw.ttf"
+          searchFonts={searchFonts}
+          typeSomething={
+            typeSomething.length === 0 ? "Hello World" : typeSomething
+          }
+          fontSize={fontSize}
         />
         <FontCard
           family="Open Sans"
-          text="Hello World"
-          files="http://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5WZLCzYlKw.ttf"
+          typeSomething={
+            typeSomething.length === 0 ? "Hello World" : typeSomething
+          }
+          fontSize={fontSize}
         />
         <FontCard
           family="Lato"
-          text="Hello World"
-          files="http://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5WZLCzYlKw.ttf"
+          typeSomething={
+            typeSomething.length === 0 ? "Hello World" : typeSomething
+          }
+          fontSize={fontSize}
         />
         <FontCard
           family="Montserrat"
-          text="Hello World"
-          files="http://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5WZLCzYlKw.ttf"
+          typeSomething={
+            typeSomething.length === 0 ? "Hello World" : typeSomething
+          }
+          fontSize={fontSize}
         />
         <FontCard
           family="Roboto Condensed"
-          text="Hello World"
-          files="http://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5WZLCzYlKw.ttf"
+          typeSomething={
+            typeSomething.length === 0 ? "Hello World" : typeSomething
+          }
+          fontSize={fontSize}
         />
       </div>
     </div>
