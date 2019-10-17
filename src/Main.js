@@ -11,7 +11,7 @@ function Main({ searchFonts, typeSomething, fontSize }) {
       );
       const data = await response.json();
       const fontssss = data.items;
-      setFonts(fontssss.slice(0, 9)); //remove once we can load on scroll
+      setFonts(fontssss.slice(0, 9)); //this just takes the first 9 fonts. remove once we can load on scroll
       console.log(fontssss);
     }
     fetchData();
@@ -22,6 +22,7 @@ function Main({ searchFonts, typeSomething, fontSize }) {
       <div className="fontcards">
         {fonts.map(font => (
           <FontCard
+            key={font.family}
             family={font.family}
             searchFonts={searchFonts}
             typeSomething={
