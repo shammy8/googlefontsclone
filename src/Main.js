@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FontCard from "./FontCard";
+//import { async } from "q";
 
 function Main({ searchFonts, typeSomething, fontSize }) {
-  // https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBNl7lcNRNpxnZNrKVoDnoCXrN5a8jpCas&sort=popularity
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(
+        "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBNl7lcNRNpxnZNrKVoDnoCXrN5a8jpCas&sort=popularity"
+      );
+      const data = await response.json();
+      const fonts = data.items;
+      console.log(fonts);
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="fontcards-container">
       <div className="fontcards">
