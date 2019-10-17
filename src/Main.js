@@ -17,10 +17,15 @@ function Main({ searchFonts, typeSomething, fontSize }) {
     fetchData();
   }, []);
 
+  //search (filter) feature
+  const filteredFonts = fonts.filter(font => {
+    return font.family.toLowerCase().indexOf(searchFonts.toLowerCase()) !== -1;
+  });
+
   return (
     <div className="fontcards-container">
       <div className="fontcards">
-        {fonts.map(font => (
+        {filteredFonts.map(font => (
           <FontCard
             key={font.family}
             family={font.family}
@@ -31,7 +36,6 @@ function Main({ searchFonts, typeSomething, fontSize }) {
             fontSize={fontSize}
           />
         ))}
-        ;
       </div>
     </div>
   );
