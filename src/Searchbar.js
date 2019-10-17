@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 
 function Searchbar() {
-  const [searchFonts, setSearchFonts] = useState("");
-  const [typeSomething, setTypeSomething] = useState("Hello World");
-  const [fontSize, setFontSize] = useState("20px");
+  const [userInput, setUserInput] = useReducer(
+    (state, newState) => ({ ...state, ...newState }),
+    {
+      searchFonts: "",
+      typeSomething: "",
+      fontSize: "20px"
+    }
+  );
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setUserInput({ [name]: value });
+  };
 
   return (
     <div className="search-bar-container">
@@ -13,25 +23,25 @@ function Searchbar() {
         <input
           type="text"
           name="searchFonts"
-          value={searchFonts}
+          value={userInput.searchFonts}
           className="search-fonts"
           placeholder="Search fonts"
-          onChange={event => setSearchFonts(event.target.value)}
+          onChange={handleChange}
         />
 
         <input
           type="text"
           name="typeSomething"
-          value={typeSomething}
+          value={userInput.typeSomething}
           className="type-something"
           placeholder="Type something"
-          onChange={event => setTypeSomething(event.target.value)}
+          onChange={handleChange}
         />
 
         <select
-          value={fontSize}
+          value={userInput.fontSize}
           name="fontSize"
-          onChange={event => setFontSize(event.target.value)}
+          onChange={handleChange}
         >
           <option value="20px">20px</option>
           <option value="24px">24px</option>
@@ -51,9 +61,9 @@ function Searchbar() {
         <div className="fa fa-repeat"></div>
       </div>
 
-      <h1>{searchFonts}</h1>
-      <h1>{typeSomething}</h1>
-      <h1>{fontSize}</h1>
+      <h1>{userInput.searchFonts}</h1>
+      <h1>{userInput.typeSomething}</h1>
+      <h1>{userInput.fontSize}</h1>
     </div>
   );
 }
