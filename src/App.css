@@ -7,6 +7,10 @@
   font-size: 14px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -188,6 +192,37 @@ header nav ul li a:visited {
   color: #ff5656;
   font-size: 22px;
   cursor: pointer;
+}
+
+.to-top {
+  height: 60px;
+  width: 60px;
+  position: fixed;
+  right: 80px;
+  bottom: 80px;
+  border: solid #d6d6d6 1px;
+  border-radius: 50%;
+  -webkit-box-shadow: 4px 4px 4px #adadad;
+          box-shadow: 4px 4px 4px #adadad;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.to-top:hover {
+  cursor: pointer;
+  background: #d6d6d6;
+}
+
+.to-top .fa {
+  font-size: 30px;
+  color: #5f5f5f;
 }
 
 footer {

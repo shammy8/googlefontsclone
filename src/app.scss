@@ -6,6 +6,10 @@
   font-size: 14px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   display: flex;
   height: 64px;
@@ -141,6 +145,28 @@ header {
     color: rgb(255, 86, 86);
     font-size: 22px;
     cursor: pointer;
+  }
+}
+
+.to-top {
+  height: 60px;
+  width: 60px;
+  position: fixed;
+  right: 80px;
+  bottom: 80px;
+  border: solid rgb(214, 214, 214) 1px;
+  border-radius: 50%;
+  box-shadow: 4px 4px 4px rgb(173, 173, 173);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+    background: rgb(214, 214, 214);
+  }
+  .fa {
+    font-size: 30px;
+    color: rgb(95, 95, 95);
   }
 }
 

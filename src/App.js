@@ -26,9 +26,14 @@ function App() {
     setUserInput({ fontSize: "20px" });
   };
 
+  const scrollUp = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div>
       <Navbar />
+
       <Searchbar
         searchFonts={userInput.searchFonts}
         typeSomething={userInput.typeSomething}
@@ -36,11 +41,17 @@ function App() {
         handleChange={handleChange}
         reset={reset}
       />
+
       <Main
         searchFonts={userInput.searchFonts}
         typeSomething={userInput.typeSomething}
         fontSize={userInput.fontSize}
       />
+
+      <div className="to-top" onClick={scrollUp}>
+        <div className="fa fa-long-arrow-up"></div>
+      </div>
+
       <Footer />
     </div>
   );
