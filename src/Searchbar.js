@@ -1,6 +1,12 @@
 import React from "react";
 
-function Searchbar({ searchFonts, typeSomething, fontSize, handleChange }) {
+function Searchbar({
+  searchFonts,
+  typeSomething,
+  fontSize,
+  handleChange,
+  reset
+}) {
   return (
     <div className="search-bar-container">
       <div className="search-bar">
@@ -40,7 +46,7 @@ function Searchbar({ searchFonts, typeSomething, fontSize, handleChange }) {
           <div className="fa fa-list"></div>
         </div>
 
-        <div className="fa fa-repeat"></div>
+        <div className="fa fa-repeat" onClick={reset}></div>
       </div>
 
       {/* <h1>{searchFonts}</h1>

@@ -20,6 +20,12 @@ function App() {
     setUserInput({ [name]: value });
   };
 
+  const reset = () => {
+    setUserInput({ searchFonts: "" });
+    setUserInput({ typeSomething: "" });
+    setUserInput({ fontSize: "20px" });
+  };
+
   return (
     <div>
       <Navbar />
@@ -28,6 +34,7 @@ function App() {
         typeSomething={userInput.typeSomething}
         fontSize={userInput.fontSize}
         handleChange={handleChange}
+        reset={reset}
       />
       <Main
         searchFonts={userInput.searchFonts}
