@@ -1,7 +1,14 @@
 import React from "react";
 
 function Footer() {
-  return <footer>Coded by Allan Sham | 2019 | Chingu Pre-Work Project</footer>;
+  return (
+    <footer>
+      Coded by Allan Sham | 2019 | Chingu Pre-Work Project |{" "}
+      <a href="https://github.com/shammy8/googlefontsclone" target="_blank">
+        Github
+      </a>
+    </footer>
+  );
 }
 
 export default Footer;

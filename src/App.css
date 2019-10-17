@@ -198,4 +198,12 @@ footer {
   left: 0;
   right: 0;
 }
+
+footer a {
+  color: red;
+}
+
+footer a:visited {
+  color: red;
+}
 /*# sourceMappingURL=app.css.map */
