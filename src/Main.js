@@ -10,9 +10,9 @@ function Main({ searchFonts, typeSomething, fontSize }) {
         "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBNl7lcNRNpxnZNrKVoDnoCXrN5a8jpCas&sort=popularity"
       );
       const data = await response.json();
-      const fontssss = data.items;
-      setFonts(fontssss.slice(0, 9)); //this just takes the first 9 fonts. remove once we can load on scroll
-      console.log(fontssss);
+      const fontsData = data.items;
+      setFonts(fontsData);
+      console.log(fontsData);
     }
     fetchData();
   }, []);
