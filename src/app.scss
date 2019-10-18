@@ -84,6 +84,7 @@ header {
     width: 100%;
     padding-left: 10px;
     border-right: solid rgb(173, 173, 173) 1px;
+    cursor: pointer;
   }
   .background-chooser {
     display: flex;
@@ -141,11 +142,11 @@ header {
 .fontcard {
   border-top: rgb(173, 173, 173) solid 1px;
   width: 100%;
-  height: 350px;
+  min-height: 300px;
   padding: 15px 5px;
   animation: opacity-in 0.5s ease-in;
   overflow: hidden;
-  // word-wrap: break-word;
+  word-wrap: break-word;
   .font-title {
     display: flex;
     justify-content: space-between;
