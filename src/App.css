@@ -79,8 +79,8 @@ header nav ul li a:visited {
 .search-bar {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px 2fr 2fr 100px 80px 50px 50px;
-      grid-template-columns: 50px 2fr 2fr 100px 80px 50px 50px;
+  -ms-grid-columns: 50px 2fr 2fr 150px 80px 50px 50px;
+      grid-template-columns: 50px 2fr 2fr 150px 80px 50px 50px;
   place-items: center;
   height: 43px;
   width: 90%;
@@ -267,5 +267,52 @@ footer a {
 
 footer a:visited {
   color: red;
+}
+
+@media only screen and (max-width: 1600px) {
+  .fontcards {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+  .fontcard {
+    min-height: 250px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .search-bar {
+    -ms-grid-columns: 50px 2fr 2fr 70px 70px 50px 50px;
+        grid-template-columns: 50px 2fr 2fr 70px 70px 50px 50px;
+  }
+  .fontcards {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .search-bar {
+    -ms-grid-columns: 50px auto 50px;
+        grid-template-columns: 50px auto 50px;
+  }
+  .search-bar .type-something {
+    display: none;
+  }
+  .search-bar select {
+    display: none;
+  }
+  .search-bar .background-chooser {
+    display: none;
+  }
+  .search-bar .list-grid-chooser {
+    display: none;
+  }
+  .fontcards {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .fontcard {
+    min-height: 190px;
+  }
 }
 /*# sourceMappingURL=app.css.map */

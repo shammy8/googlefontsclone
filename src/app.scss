@@ -63,7 +63,7 @@ header {
 }
 .search-bar {
   display: grid;
-  grid-template-columns: 50px 2fr 2fr 100px 80px 50px 50px;
+  grid-template-columns: 50px 2fr 2fr 150px 80px 50px 50px;
   place-items: center;
   height: 43px;
   width: 90%;
@@ -197,5 +197,47 @@ footer {
     &:visited {
       color: red;
     }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .fontcards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .fontcard {
+    min-height: 250px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .search-bar {
+    grid-template-columns: 50px 2fr 2fr 70px 70px 50px 50px;
+  }
+  .fontcards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .search-bar {
+    grid-template-columns: 50px auto 50px;
+    .type-something {
+      display: none;
+    }
+    select {
+      display: none;
+    }
+    .background-chooser {
+      display: none;
+    }
+    .list-grid-chooser {
+      display: none;
+    }
+  }
+  .fontcards {
+    grid-template-columns: 1fr;
+  }
+  .fontcard {
+    min-height: 190px;
   }
 }
