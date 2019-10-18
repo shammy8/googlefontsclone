@@ -56,7 +56,7 @@ function Main({ searchFonts, typeSomething, fontSize }) {
     setAtBottom(false);
   };
 
-  // console.log(inspirationalQuotes.length);
+  // choose a random quote from quotes.js for display as example text in fontcards
   const randomQuote = () => {
     const randomNum = Math.floor(Math.random() * inspirationalQuotes.length);
     const randomQuote = inspirationalQuotes[randomNum];

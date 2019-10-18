@@ -10,7 +10,20 @@ const quotes = [
   "We May Encounter Many Defeats But We Must Not Be Defeated. – Maya Angelou",
   "Knowing Is Not Enough; We Must Apply. Wishing Is Not Enough; We Must Do. – Johann Wolfgang Von Goethe",
   "We Generate Fears While We Sit. We Overcome Them By Action. – Dr. Henry Link",
-  "Whether You Think You Can Or Think You Can’t, You’re Right. – Henry Ford"
+  "Whether You Think You Can Or Think You Can’t, You’re Right. – Henry Ford",
+  "The Man Who Has Confidence In Himself Gains The Confidence Of Others. – Hasidic Proverb",
+  "The Only Limit To Our Realization Of Tomorrow Will Be Our Doubts Of Today. – Franklin D. Roosevelt",
+  "Creativity Is Intelligence Having Fun. – Albert Einstein",
+  "What You Lack In Talent Can Be Made Up With Desire, Hustle And Giving 110% All The Time. – Don Zimmer",
+  "You Are Never Too Old To Set Another Goal Or To Dream A New Dream. – C.S. Lewis",
+  "To See What Is Right And Not Do It Is A Lack Of Courage. – Confucius",
+  "Fake It Until You Make It! Act As If You Had All The Confidence You Require Until It Becomes Your Reality. – Brian Tracy",
+  "The Future Belongs To The Competent. Get Good, Get Better, Be The Best! – Success Quote By Brian Tracy",
+  "For Every Reason It’s Not Possible, There Are Hundreds Of People Who Have Faced The Same Circumstances And Succeeded. – Jack Canfield",
+  "Things Work Out Best For Those Who Make The Best Of How Things Work Out. – John Wooden",
+  "Today’s Accomplishments Were Yesterday’s Impossibilities. – Robert H. Schuller",
+  "The Only Way To Do Great Work Is To Love What You Do. If You Haven’t Found It Yet, Keep Looking. Don’t Settle. – Steve Jobs",
+  "There Are No Limits To What You Can Accomplish, Except The Limits You Place On Your Own Thinking. – Brian Tracy"
 ];
 
 export default quotes;
