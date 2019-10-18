@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FontCard from "./FontCard";
+import inspirationalQuotes from "./quotes";
 
 function Main({ searchFonts, typeSomething, fontSize }) {
   const [fonts, setFonts] = useState([]);
@@ -15,7 +16,6 @@ function Main({ searchFonts, typeSomething, fontSize }) {
       const data = await response.json();
       const fontsData = data.items;
       setFonts(fontsData);
-      console.log(fontsData);
     }
     fetchData();
   }, []);
@@ -56,6 +56,13 @@ function Main({ searchFonts, typeSomething, fontSize }) {
     setAtBottom(false);
   };
 
+  // console.log(inspirationalQuotes.length);
+  const randomQuote = () => {
+    const randomNum = Math.floor(Math.random() * inspirationalQuotes.length);
+    const randomQuote = inspirationalQuotes[randomNum];
+    return randomQuote;
+  };
+
   return (
     <div className="fontcards-container">
       <div className="fontcards">
@@ -65,7 +72,7 @@ function Main({ searchFonts, typeSomething, fontSize }) {
             family={font.family}
             searchFonts={searchFonts}
             typeSomething={
-              typeSomething.length === 0 ? "Hello World" : typeSomething
+              typeSomething.length === 0 ? randomQuote() : typeSomething
             }
             fontSize={fontSize}
           />
