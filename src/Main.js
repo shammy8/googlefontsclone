@@ -69,8 +69,7 @@ function Main({ searchFonts, typeSomething, fontSize }) {
         {displayedFonts.map(font => (
           <FontCard
             key={font.family}
-            family={font.family}
-            searchFonts={searchFonts}
+            familyName={font.family}
             typeSomething={
               typeSomething.length === 0 ? randomQuote() : typeSomething
             }

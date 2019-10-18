@@ -1,13 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-function FontCard({ family, typeSomething, fontSize }) {
+function FontCard({ familyName, typeSomething, fontSize }) {
   //Add plus signs between words in the name of the font, to be used to retrive the fonts using the url
-  const addPlusSigns = family => {
-    if (family.indexOf(" ") === -1) {
-      return family;
+  const addPlusSigns = familyName => {
+    if (familyName.indexOf(" ") === -1) {
+      return familyName;
     } else {
-      return family.split(" ").join("+");
+      return familyName.split(" ").join("+");
     }
   };
 
@@ -17,18 +17,18 @@ function FontCard({ family, typeSomething, fontSize }) {
         <Helmet>
           <link
             href={`https://fonts.googleapis.com/css?family=${addPlusSigns(
-              family
+              familyName
             )}`}
             rel="stylesheet"
           ></link>
         </Helmet>
-        <h4>{family}</h4>
+        <h4>{familyName}</h4>
         <div className="fa fa-plus-circle"></div>
       </div>
       <p
         style={{
           fontSize: fontSize,
-          fontFamily: family
+          fontFamily: familyName
         }}
       >
         {typeSomething}
