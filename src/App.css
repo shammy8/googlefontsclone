@@ -153,9 +153,27 @@ header nav ul li a:visited {
   cursor: auto;
 }
 
+@-webkit-keyframes opacity-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .fontcards-container {
   max-width: 1600px;
-  margin: 0 auto;
+  margin: 0 auto 200px auto;
 }
 
 .fontcards {
@@ -173,6 +191,8 @@ header nav ul li a:visited {
   width: 100%;
   height: 350px;
   padding: 15px 5px;
+  -webkit-animation: opacity-in 1s ease-out;
+          animation: opacity-in 1s ease-out;
 }
 
 .fontcard .font-title {

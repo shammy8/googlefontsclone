@@ -10,8 +10,11 @@ function FontCard({ family, searchFonts, typeSomething, fontSize }) {
       <p
         style={{
           fontSize: fontSize,
-          fontFamily:
-            "url(https://fonts.gstatic.com/s/shadowsintolight/v9/UqyNK9UOIntux_czAvDQx_ZcHqZXBNQzdcD5.woff2)"
+          fontFace: {
+            fontFamily: "Oswald",
+            src:
+              "http://fonts.gstatic.com/s/oswald/v26/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUFoZAaRliE.ttf"
+          }
         }}
       >
         {typeSomething}
