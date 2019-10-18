@@ -56,22 +56,20 @@ function Main({ searchFonts, typeSomething, fontSize }) {
     setAtBottom(false);
   };
 
-  // choose a random quote from quotes.js for display as example text in fontcards
-  const randomQuote = () => {
-    const randomNum = Math.floor(Math.random() * inspirationalQuotes.length);
-    const randomQuote = inspirationalQuotes[randomNum];
-    return randomQuote;
+  // assign a quote based on the index position of the fontcard
+  const assignQuote = index => {
+    return inspirationalQuotes[index % inspirationalQuotes.length];
   };
 
   return (
     <div className="fontcards-container">
       <div className="fontcards">
-        {displayedFonts.map(font => (
+        {displayedFonts.map((font, index) => (
           <FontCard
             key={font.family}
             familyName={font.family}
             typeSomething={
-              typeSomething.length === 0 ? randomQuote() : typeSomething
+              typeSomething.length === 0 ? assignQuote(index) : typeSomething //show whatever the user has type in the typesomething input box in the font card, if left blank assign a quote to be displayed
             }
             fontSize={fontSize}
           />
