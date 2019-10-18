@@ -35,6 +35,8 @@ function Searchbar({
           <option value="24px">24px</option>
           <option value="32px">32px</option>
           <option value="40px">40px</option>
+          <option value="64px">64px</option>
+          <option value="90px">90px</option>
         </select>
 
         <div className="background-chooser">
