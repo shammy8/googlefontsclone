@@ -5,6 +5,7 @@
           box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
 html {
@@ -40,7 +41,6 @@ header .google-fonts-title h1 {
 }
 
 header .google-fonts-title .google-logo {
-  background-image: url(https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_dark_color_74x24dp.png);
   width: 74px;
   height: 24px;
   opacity: 0.6;
@@ -67,10 +67,6 @@ header nav ul li a {
   text-decoration: none;
 }
 
-header nav ul li a:visited {
-  color: black;
-}
-
 .search-bar-container {
   max-width: 1600px;
   margin: 0 auto;
@@ -79,8 +75,8 @@ header nav ul li a:visited {
 .search-bar {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px 2fr 2fr 150px 80px 50px 50px;
-      grid-template-columns: 50px 2fr 2fr 150px 80px 50px 50px;
+  -ms-grid-columns: 50px 2fr 2fr 150px 50px 50px 50px;
+      grid-template-columns: 50px 2fr 2fr 150px 50px 50px 50px;
   place-items: center;
   height: 43px;
   width: 90%;
@@ -123,7 +119,7 @@ header nav ul li a:visited {
 }
 
 .search-bar .background-chooser .fa-circle {
-  margin-right: 7px;
+  font-size: 25px;
 }
 
 .search-bar .list-grid-chooser {
@@ -143,11 +139,11 @@ header nav ul li a:visited {
 
 .search-bar .fa {
   font-size: 22px;
-  color: #444444;
 }
 
 .search-bar .fa:hover {
   cursor: pointer;
+  opacity: 0.7;
 }
 
 .search-bar .fa-search:hover {
@@ -191,7 +187,7 @@ header nav ul li a:visited {
 .fontcard {
   border-top: #adadad solid 1px;
   width: 100%;
-  min-height: 300px;
+  min-height: 200px;
   padding: 15px 5px;
   -webkit-animation: opacity-in 0.5s ease-in;
           animation: opacity-in 0.5s ease-in;
@@ -226,8 +222,8 @@ header nav ul li a:visited {
   bottom: 80px;
   border: solid #d6d6d6 1px;
   border-radius: 50%;
-  -webkit-box-shadow: 4px 4px 4px #adadad;
-          box-shadow: 4px 4px 4px #adadad;
+  -webkit-box-shadow: 2px 2px 5px #adadad;
+          box-shadow: 2px 2px 5px #adadad;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -262,11 +258,11 @@ footer {
 }
 
 footer a {
-  color: red;
+  color: #ff5656;
 }
 
 footer a:visited {
-  color: red;
+  color: #ff5656;
 }
 
 @media only screen and (max-width: 1600px) {
@@ -274,15 +270,12 @@ footer a:visited {
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
   }
-  .fontcard {
-    min-height: 250px;
-  }
 }
 
 @media only screen and (max-width: 1280px) {
   .search-bar {
-    -ms-grid-columns: 50px 2fr 2fr 70px 70px 50px 50px;
-        grid-template-columns: 50px 2fr 2fr 70px 70px 50px 50px;
+    -ms-grid-columns: 50px 2fr 2fr 70px 50px 50px 50px;
+        grid-template-columns: 50px 2fr 2fr 70px 50px 50px 50px;
   }
   .fontcards {
     -ms-grid-columns: 1fr 1fr;

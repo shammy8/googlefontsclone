@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
 html {
@@ -27,7 +28,6 @@ header {
       opacity: 0.8;
     }
     .google-logo {
-      background-image: url(https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_dark_color_74x24dp.png);
       width: 74px;
       height: 24px;
       opacity: 0.6;
@@ -48,9 +48,6 @@ header {
         opacity: 0.8;
         a {
           text-decoration: none;
-          &:visited {
-            color: black;
-          }
         }
       }
     }
@@ -63,7 +60,7 @@ header {
 }
 .search-bar {
   display: grid;
-  grid-template-columns: 50px 2fr 2fr 150px 80px 50px 50px;
+  grid-template-columns: 50px 2fr 2fr 150px 50px 50px 50px;
   place-items: center;
   height: 43px;
   width: 90%;
@@ -94,7 +91,7 @@ header {
     height: 100%;
     border-right: solid rgb(173, 173, 173) 1px;
     .fa-circle {
-      margin-right: 7px;
+      font-size: 25px;
     }
   }
   .list-grid-chooser {
@@ -107,9 +104,9 @@ header {
   }
   .fa {
     font-size: 22px;
-    color: rgb(68, 68, 68);
     &:hover {
       cursor: pointer;
+      opacity: 0.7;
     }
   }
   .fa-search:hover {
@@ -128,7 +125,6 @@ header {
 .fontcards-container {
   max-width: 1600px;
   margin: 0 auto 200px auto;
-  // border: red solid 1px;
 }
 .fontcards {
   display: grid;
@@ -137,12 +133,11 @@ header {
   grid-row-gap: 50px;
   width: 90%;
   margin: 30px auto;
-  // border: black solid 1px;
 }
 .fontcard {
   border-top: rgb(173, 173, 173) solid 1px;
   width: 100%;
-  min-height: 300px;
+  min-height: 200px;
   padding: 15px 5px;
   animation: opacity-in 0.5s ease-in;
   overflow: hidden;
@@ -168,7 +163,7 @@ header {
   bottom: 80px;
   border: solid rgb(214, 214, 214) 1px;
   border-radius: 50%;
-  box-shadow: 4px 4px 4px rgb(173, 173, 173);
+  box-shadow: 2px 2px 5px rgb(173, 173, 173);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -193,9 +188,9 @@ footer {
   left: 0;
   right: 0;
   a {
-    color: red;
+    color: rgb(255, 86, 86);
     &:visited {
-      color: red;
+      color: rgb(255, 86, 86);
     }
   }
 }
@@ -204,14 +199,11 @@ footer {
   .fontcards {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .fontcard {
-    min-height: 250px;
-  }
 }
 
 @media only screen and (max-width: 1280px) {
   .search-bar {
-    grid-template-columns: 50px 2fr 2fr 70px 70px 50px 50px;
+    grid-template-columns: 50px 2fr 2fr 70px 50px 50px 50px;
   }
   .fontcards {
     grid-template-columns: 1fr 1fr;

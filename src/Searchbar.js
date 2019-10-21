@@ -5,6 +5,7 @@ function Searchbar({
   typeSomething,
   fontSize,
   handleChange,
+  toggleTheme,
   listGridToggle,
   isList,
   reset
@@ -42,8 +43,7 @@ function Searchbar({
         </select>
 
         <div className="background-chooser">
-          <div className="fa fa-circle"></div>
-          <div className="fa fa-circle-o"></div>
+          <div className="fa fa-circle" onClick={toggleTheme}></div>
         </div>
 
         <div className="list-grid-chooser">

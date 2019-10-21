@@ -10,7 +10,10 @@ function Navbar() {
       <nav>
         <ul>
           <li>
-            <a style={{ color: "red" }} href={"https://fonts.google.com"}>
+            <a
+              style={{ color: " rgb(255, 86, 86)" }}
+              href={"https://fonts.google.com"}
+            >
               CATALOG
             </a>
           </li>
