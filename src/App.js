@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useState, useReducer } from "react";
 import Navbar from "./Navbar.js";
 import Searchbar from "./Searchbar.js";
 import Main from "./Main.js";
@@ -11,7 +11,8 @@ function App() {
     {
       searchFonts: "",
       typeSomething: "",
-      fontSize: "20px"
+      fontSize: "20px",
+      isList: false
     }
   );
 
@@ -20,10 +21,15 @@ function App() {
     setUserInput({ [name]: value });
   };
 
+  const listGridToggle = () => {
+    setUserInput({ isList: !userInput.isList });
+  };
+
   const reset = () => {
     setUserInput({ searchFonts: "" });
     setUserInput({ typeSomething: "" });
     setUserInput({ fontSize: "20px" });
+    setUserInput({ isList: false });
   };
 
   return (
@@ -35,6 +41,8 @@ function App() {
         typeSomething={userInput.typeSomething}
         fontSize={userInput.fontSize}
         handleChange={handleChange}
+        listGridToggle={listGridToggle}
+        isList={userInput.isList}
         reset={reset}
       />
 
@@ -42,6 +50,7 @@ function App() {
         searchFonts={userInput.searchFonts}
         typeSomething={userInput.typeSomething}
         fontSize={userInput.fontSize}
+        isList={userInput.isList}
       />
 
       <div

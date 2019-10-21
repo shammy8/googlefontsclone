@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import FontCard from "./FontCard";
 import inspirationalQuotes from "./quotes";
 
-function Main({ searchFonts, typeSomething, fontSize }) {
+function Main({ searchFonts, typeSomething, fontSize, isList }) {
   const [fonts, setFonts] = useState([]);
   const [numberOfFonts, setNumberOfFonts] = useState(20);
   const [atBottom, setAtBottom] = useState(false);
@@ -63,7 +63,12 @@ function Main({ searchFonts, typeSomething, fontSize }) {
 
   return (
     <div className="fontcards-container">
-      <div className="fontcards">
+      <div
+        className="fontcards"
+        style={
+          isList ? { gridTemplateColumns: "1fr" } : { gridTemplateColumns: "" }
+        }
+      >
         {displayedFonts.map((font, index) => (
           <FontCard
             key={font.family}

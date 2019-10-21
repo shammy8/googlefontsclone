@@ -5,6 +5,8 @@ function Searchbar({
   typeSomething,
   fontSize,
   handleChange,
+  listGridToggle,
+  isList,
   reset
 }) {
   return (
@@ -45,15 +47,20 @@ function Searchbar({
         </div>
 
         <div className="list-grid-chooser">
-          <div className="fa fa-list"></div>
+          <div
+            className="fa fa-list"
+            onClick={listGridToggle}
+            style={isList ? { display: "none" } : { display: "initial" }}
+          ></div>
+          <div
+            className="fa fa-th"
+            onClick={listGridToggle}
+            style={isList ? { display: "initial" } : { display: "none" }}
+          ></div>
         </div>
 
         <div className="fa fa-repeat" onClick={reset}></div>
       </div>
-
-      {/* <h1>{searchFonts}</h1>
-      <h1>{typeSomething}</h1>
-      <h1>{fontSize}</h1> */}
     </div>
   );
 }
