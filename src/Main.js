@@ -37,7 +37,7 @@ function Main({ searchFonts, typeSomething, fontSize, isList }) {
   //if at bottom of the screen change atBottom state to true
   function handleScroll() {
     if (
-      window.innerHeight + document.documentElement.scrollTop + 2 < //worked before without the + 2, just !== now doesn't work even when I go back to previous commits with GIT????
+      window.innerHeight + document.documentElement.scrollTop + 2 < // worked before with just !==, then today (22/10/19) stopped working even when I go back to previous commits with GIT???? Now have to change to + 2
       document.documentElement.offsetHeight
     )
       return;
