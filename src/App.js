@@ -9,7 +9,7 @@ import Footer from "./Footer.js";
 import "./App.css";
 
 const GlobalStyle = createGlobalStyle`
-  body, footer, input, select, a:visited {
+  body, .side-drawer, footer, input, select, a:visited {
     background-color: ${props => (props.theme.mode ? "#222" : "#FFF")};
     color: ${props => (props.theme.mode ? "#FFF" : "rgb(68, 68, 68)")}
     }
@@ -17,8 +17,9 @@ const GlobalStyle = createGlobalStyle`
     background-image: ${props =>
       props.theme.mode
         ? "url(https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_light_color_74x24dp.png)"
-        : "url(https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_dark_color_74x24dp.png)"}
-    }
+        : "url(https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_dark_color_74x24dp.png)"};
+    opacity: ${props => (props.theme.mode ? "1" : "0.6")}
+  }
 `;
 
 function App() {

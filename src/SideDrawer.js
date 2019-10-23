@@ -1,12 +1,11 @@
 import React from "react";
 
 function SideDrawer({ isSideDrawerOpen }) {
-  let classes = "side-drawer";
-  if (isSideDrawerOpen) {
-    classes = "side-drawer open";
-  }
   return (
-    <div className={classes}>
+    <div
+      className="side-drawer"
+      style={isSideDrawerOpen ? { transform: "translateX(0)" } : null}
+    >
       <div className="google-fonts-title">
         <div className="google-logo"></div>
         <h1>&nbsp;Fonts</h1>

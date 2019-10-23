@@ -30,7 +30,6 @@ html {
 .google-fonts-title .google-logo {
   width: 74px;
   height: 24px;
-  opacity: 0.6;
   position: relative;
   bottom: -1px;
 }
@@ -77,21 +76,14 @@ header nav ul li a {
   text-decoration: none;
 }
 
-.side-drawer.open {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-}
-
 .side-drawer {
   height: 100vh;
   width: 300px;
   max-width: 80%;
-  -webkit-box-shadow: 2px 0px 5px gray;
-          box-shadow: 2px 0px 5px gray;
   position: fixed;
   top: 0;
   left: 0;
-  background: white;
+  border-right: white solid 1px;
   z-index: 200;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
