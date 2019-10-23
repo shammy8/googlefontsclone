@@ -352,6 +352,9 @@ footer a:visited {
   .fa-navicon {
     display: none;
   }
+  .to-top {
+    right: 22px;
+  }
 }
 
 @media only screen and (max-width: 1036px) {
@@ -386,6 +389,12 @@ footer a:visited {
   }
   .fontcard {
     min-height: 190px;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  .to-top {
+    bottom: 22px;
   }
 }
 /*# sourceMappingURL=app.css.map */
