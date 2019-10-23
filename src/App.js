@@ -1,6 +1,8 @@
 import React, { useReducer } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import Navbar from "./Navbar.js";
+import SideDrawer from "./SideDrawer.js";
+import Backdrop from "./Backdrop.js";
 import Searchbar from "./Searchbar.js";
 import Main from "./Main.js";
 import Footer from "./Footer.js";
@@ -23,6 +25,7 @@ function App() {
   const [userInput, setUserInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {
+      isSideDrawerOpen: false,
       searchFonts: "",
       typeSomething: "",
       fontSize: "20px",
@@ -30,6 +33,10 @@ function App() {
       isList: false
     }
   );
+
+  const sideDrawerToggle = () => {
+    setUserInput({ isSideDrawerOpen: !userInput.isSideDrawerOpen });
+  };
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -57,7 +64,13 @@ function App() {
       <>
         <GlobalStyle />
         <div>
-          <Navbar />
+          <Navbar sideDrawerToggle={sideDrawerToggle} />
+          <SideDrawer isSideDrawerOpen={userInput.isSideDrawerOpen} />
+          {userInput.isSideDrawerOpen ? (
+            <div>
+              <Backdrop sideDrawerToggle={sideDrawerToggle} />
+            </div>
+          ) : null}
 
           <Searchbar
             searchFonts={userInput.searchFonts}

@@ -11,32 +11,41 @@ html {
   scroll-behavior: smooth;
 }
 
+.google-fonts-title {
+  display: flex;
+  align-items: center;
+  h1 {
+    font-size: 22px;
+    font-weight: normal;
+    opacity: 0.8;
+  }
+  .google-logo {
+    width: 74px;
+    height: 24px;
+    opacity: 0.6;
+    position: relative;
+    bottom: -1px;
+  }
+}
+
 header {
   display: flex;
   height: 64px;
   border-bottom: solid 1px rgb(173, 173, 173);
   justify-content: space-between;
-  padding-left: 50px;
+  padding-left: 70px;
   padding-right: 50px;
-
-  .google-fonts-title {
-    display: flex;
-    align-items: center;
-    h1 {
-      font-size: 22px;
-      font-weight: normal;
-      opacity: 0.8;
-    }
-    .google-logo {
-      width: 74px;
-      height: 24px;
-      opacity: 0.6;
-      position: relative;
-      bottom: -1px;
-    }
-  }
+  position: relative;
 
   nav {
+    .fa-navicon {
+      position: absolute;
+      left: 24px;
+      top: 18px;
+      cursor: pointer;
+      font-size: 23px;
+      display: none;
+    }
     ul {
       display: flex;
       list-style: none;
@@ -52,6 +61,55 @@ header {
       }
     }
   }
+}
+
+.side-drawer.open {
+  transform: translateX(0);
+}
+.side-drawer {
+  height: 100vh;
+  width: 300px;
+  max-width: 80%;
+  box-shadow: 2px 0px 5px gray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 200;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+  .google-fonts-title {
+    margin-top: 18px;
+    margin-bottom: 12px;
+    margin-left: 20px;
+    h1 {
+      position: relative;
+      bottom: 1px;
+    }
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 35px;
+  }
+  li {
+    margin: 10px 0;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .search-bar-container {
@@ -207,6 +265,22 @@ footer {
   }
   .fontcards {
     grid-template-columns: 1fr 1fr;
+  }
+  .fa-navicon {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1036px) {
+  header {
+    nav {
+      .fa-navicon {
+        display: block;
+      }
+      ul {
+        display: none;
+      }
+    }
   }
 }
 

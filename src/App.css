@@ -12,6 +12,29 @@ html {
   scroll-behavior: smooth;
 }
 
+.google-fonts-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.google-fonts-title h1 {
+  font-size: 22px;
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+.google-fonts-title .google-logo {
+  width: 74px;
+  height: 24px;
+  opacity: 0.6;
+  position: relative;
+  bottom: -1px;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,31 +44,18 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-left: 50px;
+  padding-left: 70px;
   padding-right: 50px;
-}
-
-header .google-fonts-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-header .google-fonts-title h1 {
-  font-size: 22px;
-  font-weight: normal;
-  opacity: 0.8;
-}
-
-header .google-fonts-title .google-logo {
-  width: 74px;
-  height: 24px;
-  opacity: 0.6;
   position: relative;
-  bottom: -1px;
+}
+
+header nav .fa-navicon {
+  position: absolute;
+  left: 24px;
+  top: 18px;
+  cursor: pointer;
+  font-size: 23px;
+  display: none;
 }
 
 header nav ul {
@@ -65,6 +75,72 @@ header nav ul li {
 
 header nav ul li a {
   text-decoration: none;
+}
+
+.side-drawer.open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.side-drawer {
+  height: 100vh;
+  width: 300px;
+  max-width: 80%;
+  -webkit-box-shadow: 2px 0px 5px gray;
+          box-shadow: 2px 0px 5px gray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 200;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.side-drawer .google-fonts-title {
+  margin-top: 18px;
+  margin-bottom: 12px;
+  margin-left: 20px;
+}
+
+.side-drawer .google-fonts-title h1 {
+  position: relative;
+  bottom: 1px;
+}
+
+.side-drawer ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+  margin-left: 35px;
+}
+
+.side-drawer li {
+  margin: 10px 0;
+}
+
+.side-drawer a {
+  text-decoration: none;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .search-bar-container {
@@ -280,6 +356,18 @@ footer a:visited {
   .fontcards {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+  }
+  .fa-navicon {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1036px) {
+  header nav .fa-navicon {
+    display: block;
+  }
+  header nav ul {
+    display: none;
   }
 }
 

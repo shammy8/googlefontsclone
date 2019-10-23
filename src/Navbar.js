@@ -1,6 +1,6 @@
 import React from "react";
 
-function Navbar() {
+function Navbar({ sideDrawerToggle }) {
   return (
     <header>
       <div className="google-fonts-title">
@@ -8,17 +8,24 @@ function Navbar() {
         <h1>&nbsp;Fonts</h1>
       </div>
       <nav>
+        <div className="fa fa-navicon" onClick={sideDrawerToggle}></div>
         <ul>
           <li>
             <a
               style={{ color: " rgb(255, 86, 86)" }}
               href={"https://fonts.google.com"}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               CATALOG
             </a>
           </li>
           <li>
-            <a href={"https://fonts.google.com/featured"} target="blank">
+            <a
+              href={"https://fonts.google.com/featured"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               FEATURED
             </a>
           </li>
@@ -27,13 +34,18 @@ function Navbar() {
               href={
                 "https://design.google/library/google-fonts/?utm_source=Google&utm_medium=Fonts&utm_campaign=Article%20Tab"
               }
-              target="blank"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               ARTICLES
             </a>
           </li>
           <li>
-            <a href={"https://fonts.google.com/about"} target="blank">
+            <a
+              href={"https://fonts.google.com/about"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               ABOUT
             </a>
           </li>
