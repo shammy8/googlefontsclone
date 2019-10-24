@@ -6,6 +6,7 @@ function Main({ searchFonts, typeSomething, fontSize, isList }) {
   const [fonts, setFonts] = useState([]);
   const [numberOfFonts, setNumberOfFonts] = useState(20);
   const [atBottom, setAtBottom] = useState(false);
+  const [atTop, setAtTop] = useState(true);
 
   //fetch all the fonts from Google Fonts API
   useEffect(() => {
@@ -37,11 +38,16 @@ function Main({ searchFonts, typeSomething, fontSize, isList }) {
   //if at bottom of the screen change atBottom state to true
   function handleScroll() {
     if (
-      window.innerHeight + document.documentElement.scrollTop + 2 < // worked before with just !==, then today (22/10/19) stopped working even when I go back to previous commits with GIT???? Now have to change to + 2
+      window.innerHeight + document.documentElement.scrollTop + 2 >= // worked before with just !==, then today (22/10/19) stopped working even when I go back to previous commits with GIT???? Now have to change to + 2
       document.documentElement.offsetHeight
-    )
-      return;
-    setAtBottom(true);
+    ) {
+      setAtBottom(true);
+    }
+    if (window.pageYOffset === 0) {
+      setAtTop(true);
+    } else {
+      setAtTop(false);
+    }
   }
 
   //if atBottom is true run increaseNoOfFonts function
@@ -62,23 +68,36 @@ function Main({ searchFonts, typeSomething, fontSize, isList }) {
   };
 
   return (
-    <div className="fontcards-container">
+    <div>
+      <div className="fontcards-container">
+        <div
+          className="fontcards"
+          style={
+            isList
+              ? { gridTemplateColumns: "1fr" }
+              : { gridTemplateColumns: "" }
+          }
+        >
+          {displayedFonts.map((font, index) => (
+            <FontCard
+              key={font.family}
+              familyName={font.family}
+              typeSomething={
+                typeSomething.length === 0 ? assignQuote(index) : typeSomething //show whatever the user has type in the typesomething input box in the font card, if left blank assign a quote to be displayed
+              }
+              fontSize={fontSize}
+            />
+          ))}
+        </div>
+      </div>
       <div
-        className="fontcards"
-        style={
-          isList ? { gridTemplateColumns: "1fr" } : { gridTemplateColumns: "" }
-        }
+        className="to-top"
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
+        style={atTop ? { display: "none" } : { display: "flex" }}
       >
-        {displayedFonts.map((font, index) => (
-          <FontCard
-            key={font.family}
-            familyName={font.family}
-            typeSomething={
-              typeSomething.length === 0 ? assignQuote(index) : typeSomething //show whatever the user has type in the typesomething input box in the font card, if left blank assign a quote to be displayed
-            }
-            fontSize={fontSize}
-          />
-        ))}
+        <div className="fa fa-long-arrow-up"></div>
       </div>
     </div>
   );

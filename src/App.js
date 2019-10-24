@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import Navbar from "./Navbar.js";
 import SideDrawer from "./SideDrawer.js";
@@ -34,6 +34,8 @@ function App() {
       isList: false
     }
   );
+
+  const [isAtTop, setIsAtTop] = useState(false);
 
   const sideDrawerToggle = () => {
     setUserInput({ isSideDrawerOpen: !userInput.isSideDrawerOpen });
@@ -91,14 +93,14 @@ function App() {
             isList={userInput.isList}
           />
 
-          <div
+          {/* <div
             className="to-top"
             onClick={() => {
               window.scrollTo(0, 0);
             }}
           >
             <div className="fa fa-long-arrow-up"></div>
-          </div>
+          </div> */}
           <Footer />
         </div>
       </>

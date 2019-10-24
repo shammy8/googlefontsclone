@@ -292,8 +292,8 @@ header nav ul li a {
 }
 
 .to-top {
-  height: 60px;
-  width: 60px;
+  height: 55px;
+  width: 55px;
   position: fixed;
   right: 80px;
   bottom: 80px;
@@ -301,9 +301,6 @@ header nav ul li a {
   border-radius: 50%;
   -webkit-box-shadow: 2px 2px 5px #adadad;
           box-shadow: 2px 2px 5px #adadad;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

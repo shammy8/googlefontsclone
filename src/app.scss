@@ -214,15 +214,14 @@ header {
 }
 
 .to-top {
-  height: 60px;
-  width: 60px;
+  height: 55px;
+  width: 55px;
   position: fixed;
   right: 80px;
   bottom: 80px;
   border: solid rgb(214, 214, 214) 1px;
   border-radius: 50%;
   box-shadow: 2px 2px 5px rgb(173, 173, 173);
-  display: flex;
   justify-content: center;
   align-items: center;
   background: white;
