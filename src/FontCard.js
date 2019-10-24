@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-function FontCard({ familyName, typeSomething, fontSize }) {
+function FontCard({ familyName, typeSomething, fontSize, addFont }) {
   //Add plus signs between words in the name of the font, to be used to retrive the fonts using the url
   const addPlusSigns = familyName => {
     if (familyName.indexOf(" ") === -1) {
@@ -23,7 +23,10 @@ function FontCard({ familyName, typeSomething, fontSize }) {
           ></link>
         </Helmet>
         <h4>{familyName}</h4>
-        <div className="fa fa-plus-circle"></div>
+        <div
+          className="fa fa-plus-circle"
+          onClick={() => addFont(familyName)}
+        ></div>
       </div>
       <p
         style={{

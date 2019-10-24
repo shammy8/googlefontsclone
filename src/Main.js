@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import FontCard from "./FontCard";
 import inspirationalQuotes from "./quotes";
 
-function Main({ searchFonts, typeSomething, fontSize, isList }) {
+function Main({ searchFonts, typeSomething, fontSize, isList, addFont }) {
   const [fonts, setFonts] = useState([]);
   const [numberOfFonts, setNumberOfFonts] = useState(20);
   const [atBottom, setAtBottom] = useState(false);
@@ -86,6 +86,7 @@ function Main({ searchFonts, typeSomething, fontSize, isList }) {
                 typeSomething.length === 0 ? assignQuote(index) : typeSomething //show whatever the user has type in the typesomething input box in the font card, if left blank assign a quote to be displayed
               }
               fontSize={fontSize}
+              addFont={addFont}
             />
           ))}
         </div>

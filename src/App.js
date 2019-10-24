@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useReducer } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import Navbar from "./Navbar.js";
 import SideDrawer from "./SideDrawer.js";
@@ -9,6 +9,7 @@ import Footer from "./Footer.js";
 import BottomDrawer from "./BottomDrawer.js";
 import "./App.css";
 
+//styles for dark and light mode
 const GlobalStyle = createGlobalStyle`
   body, .side-drawer, footer, input, select, a:visited {
     background-color: ${props => (props.theme.mode ? "#222" : "#FFF")};
@@ -37,7 +38,7 @@ function App() {
     }
   );
 
-  const [isAtTop, setIsAtTop] = useState(false);
+  const [addedFonts, setAddedFonts] = useState([]);
 
   const sideDrawerToggle = () => {
     setUserInput({ isSideDrawerOpen: !userInput.isSideDrawerOpen });
@@ -45,6 +46,24 @@ function App() {
 
   const bottomDrawerToggle = () => {
     setUserInput({ isBottomDrawerOpen: !userInput.isBottomDrawerOpen });
+  };
+
+  //adds selected fonts to the addedFonts array, but only add unique items
+  const addFont = selectedFont => {
+    setAddedFonts([...new Set([...addedFonts, selectedFont])]);
+  };
+
+  //clear all the selected fonts from the addedFont array
+  const clearAllSelectedFonts = () => {
+    setAddedFonts([]);
+    setUserInput({ isBottomDrawerOpen: false });
+  };
+
+  // remove the corresponding font from the addedFont array
+  const clearSelectedFont = selectedFont => {
+    setAddedFonts(
+      addedFonts.filter(currentFont => currentFont !== selectedFont)
+    );
   };
 
   const removeDrawers = () => {
@@ -102,10 +121,14 @@ function App() {
             typeSomething={userInput.typeSomething}
             fontSize={userInput.fontSize}
             isList={userInput.isList}
+            addFont={addFont}
           />
           <BottomDrawer
             isBottomDrawerOpen={userInput.isBottomDrawerOpen}
             bottomDrawerToggle={bottomDrawerToggle}
+            addedFonts={addedFonts}
+            clearAllSelectedFonts={clearAllSelectedFonts}
+            clearSelectedFont={clearSelectedFont}
           />
           <Footer />
         </div>
