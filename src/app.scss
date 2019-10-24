@@ -86,13 +86,18 @@ header {
     list-style: none;
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    margin-left: 35px;
+    margin-top: 10px;
+    margin-left: 20px;
   }
-  li {
-    margin: 10px 0;
+  .fa {
+    font-size: 24px;
   }
   a {
+    display: grid;
+    grid-template-columns: 30px 100px;
+    grid-column-gap: 20px;
+    align-items: center;
+    margin: 15px 0;
     text-decoration: none;
   }
 }

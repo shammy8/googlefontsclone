@@ -19,6 +19,7 @@ function SideDrawer({ isSideDrawerOpen }) {
             target="_blank"
             rel="noopener noreferrer"
           >
+            <div className="fa fa-home"></div>
             Catalog
           </a>
         </li>
@@ -28,6 +29,7 @@ function SideDrawer({ isSideDrawerOpen }) {
             target="_blank"
             rel="noopener noreferrer"
           >
+            <div className="fa fa-star"></div>
             Featured
           </a>
         </li>
@@ -39,6 +41,7 @@ function SideDrawer({ isSideDrawerOpen }) {
             target="_blank"
             rel="noopener noreferrer"
           >
+            <div className="fa fa-align-left"></div>
             Articles
           </a>
         </li>
@@ -48,6 +51,7 @@ function SideDrawer({ isSideDrawerOpen }) {
             target="_blank"
             rel="noopener noreferrer"
           >
+            <div className="fa fa-info-circle"></div>
             About
           </a>
         </li>
