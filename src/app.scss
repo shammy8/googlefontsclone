@@ -252,6 +252,26 @@ footer {
   }
 }
 
+.bottom-drawer {
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  width: 500px;
+  height: 300px;
+  background: white;
+
+  transition: transform 0.3s ease-out;
+  z-index: 100;
+  .bottom-drawer-head {
+    height: 50px;
+    background: rgb(56, 56, 56);
+    color: white;
+    line-height: 50px;
+    padding-left: 20px;
+    cursor: pointer;
+  }
+}
+
 @media only screen and (max-width: 1600px) {
   .fontcards {
     grid-template-columns: 1fr 1fr 1fr;

@@ -6,6 +6,7 @@ import Backdrop from "./Backdrop.js";
 import Searchbar from "./Searchbar.js";
 import Main from "./Main.js";
 import Footer from "./Footer.js";
+import BottomDrawer from "./BottomDrawer.js";
 import "./App.css";
 
 const GlobalStyle = createGlobalStyle`
@@ -31,7 +32,8 @@ function App() {
       typeSomething: "",
       fontSize: "20px",
       isDarkTheme: false,
-      isList: false
+      isList: false,
+      isBottomDrawerOpen: false
     }
   );
 
@@ -39,6 +41,15 @@ function App() {
 
   const sideDrawerToggle = () => {
     setUserInput({ isSideDrawerOpen: !userInput.isSideDrawerOpen });
+  };
+
+  const bottomDrawerToggle = () => {
+    setUserInput({ isBottomDrawerOpen: !userInput.isBottomDrawerOpen });
+  };
+
+  const removeDrawers = () => {
+    setUserInput({ isSideDrawerOpen: false });
+    setUserInput({ isBottomDrawerOpen: false });
   };
 
   const handleChange = event => {
@@ -69,9 +80,9 @@ function App() {
         <div>
           <Navbar sideDrawerToggle={sideDrawerToggle} />
           <SideDrawer isSideDrawerOpen={userInput.isSideDrawerOpen} />
-          {userInput.isSideDrawerOpen ? (
+          {userInput.isSideDrawerOpen || userInput.isBottomDrawerOpen ? (
             <div>
-              <Backdrop sideDrawerToggle={sideDrawerToggle} />
+              <Backdrop removeDrawers={removeDrawers} />
             </div>
           ) : null}
 
@@ -92,15 +103,10 @@ function App() {
             fontSize={userInput.fontSize}
             isList={userInput.isList}
           />
-
-          {/* <div
-            className="to-top"
-            onClick={() => {
-              window.scrollTo(0, 0);
-            }}
-          >
-            <div className="fa fa-long-arrow-up"></div>
-          </div> */}
+          <BottomDrawer
+            isBottomDrawerOpen={userInput.isBottomDrawerOpen}
+            bottomDrawerToggle={bottomDrawerToggle}
+          />
           <Footer />
         </div>
       </>

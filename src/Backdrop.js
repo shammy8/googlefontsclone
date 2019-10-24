@@ -1,7 +1,7 @@
 import React from "react";
 
-function Backdrop({ sideDrawerToggle }) {
-  return <div className="backdrop" onClick={sideDrawerToggle}></div>;
+function Backdrop({ removeDrawers }) {
+  return <div className="backdrop" onClick={removeDrawers}></div>;
 }
 
 export default Backdrop;
