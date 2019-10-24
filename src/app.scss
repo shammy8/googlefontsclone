@@ -217,7 +217,7 @@ header {
   height: 55px;
   width: 55px;
   position: fixed;
-  right: 80px;
+  left: 80px;
   bottom: 80px;
   border: solid rgb(214, 214, 214) 1px;
   border-radius: 50%;
@@ -257,39 +257,52 @@ footer {
   position: fixed;
   bottom: 0;
   right: 30px;
-  width: 500px;
-  height: 300px;
+  width: 600px;
   background: white;
   transition: transform 0.3s ease-out;
   z-index: 100;
-  overflow: auto;
   .bottom-drawer-head {
     height: 50px;
     background: rgb(56, 56, 56);
     color: white;
     line-height: 50px;
     padding-left: 20px;
-    cursor: pointer;
   }
   .bottom-drawer-main {
-    margin: 10px 20px;
+    position: relative;
+    padding: 10px 20px;
+    height: 290px;
+    overflow: auto;
   }
   .clear-all-fonts {
     cursor: pointer;
-    color: red;
+    position: absolute;
+    top: 11px;
+    left: 160px;
+    color: rgb(255, 86, 86);
   }
   .fa-minus-circle {
     cursor: pointer;
+    color: rgb(255, 86, 86);
+  }
+  .code {
+    padding: 15px;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.08);
+    word-break: break-all;
   }
 }
 
+.font-tags {
+  margin: 5px 0 10px 0;
+}
 .font-tag {
   display: inline-flex;
   align-items: center;
-  height: 25px;
-  margin: 5px 10px 5px 0;
-  padding: 0 10px;
-  border: solid black 1px;
+  height: 30px;
+  margin: 3px 10px 3px 0;
+  padding: 0 15px;
+  background: rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   p {
     margin-right: 5px;
@@ -316,7 +329,7 @@ footer {
     display: none;
   }
   .to-top {
-    right: 22px;
+    left: 22px;
   }
 }
 
@@ -354,6 +367,11 @@ footer {
   }
   .fontcard {
     min-height: 190px;
+  }
+  .bottom-drawer {
+    width: 100%;
+    left: 0;
+    right: 0;
   }
 }
 

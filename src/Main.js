@@ -2,7 +2,14 @@ import React, { useState, useEffect } from "react";
 import FontCard from "./FontCard";
 import inspirationalQuotes from "./quotes";
 
-function Main({ searchFonts, typeSomething, fontSize, isList, addFont }) {
+function Main({
+  addPlusSigns,
+  searchFonts,
+  typeSomething,
+  fontSize,
+  isList,
+  addFont
+}) {
   const [fonts, setFonts] = useState([]);
   const [numberOfFonts, setNumberOfFonts] = useState(20);
   const [atBottom, setAtBottom] = useState(false);
@@ -87,6 +94,7 @@ function Main({ searchFonts, typeSomething, fontSize, isList, addFont }) {
               }
               fontSize={fontSize}
               addFont={addFont}
+              addPlusSigns={addPlusSigns}
             />
           ))}
         </div>

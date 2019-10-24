@@ -1,16 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-function FontCard({ familyName, typeSomething, fontSize, addFont }) {
-  //Add plus signs between words in the name of the font, to be used to retrive the fonts using the url
-  const addPlusSigns = familyName => {
-    if (familyName.indexOf(" ") === -1) {
-      return familyName;
-    } else {
-      return familyName.split(" ").join("+");
-    }
-  };
-
+function FontCard({
+  addPlusSigns,
+  familyName,
+  typeSomething,
+  fontSize,
+  addFont
+}) {
   return (
     <div className="fontcard">
       <div className="font-title">

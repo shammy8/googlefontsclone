@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import Navbar from "./Navbar.js";
 import SideDrawer from "./SideDrawer.js";
@@ -15,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => (props.theme.mode ? "#222" : "#FFF")};
     color: ${props => (props.theme.mode ? "#FFF" : "rgb(68, 68, 68)")}
     }
+  .bottom-drawer {
+    color: ${props =>
+      props.theme.mode ? "rgb(68, 68, 68)" : "rgb(68, 68, 68)"}
+    }  
   .google-logo {
     background-image: ${props =>
       props.theme.mode
@@ -44,8 +48,11 @@ function App() {
     setUserInput({ isSideDrawerOpen: !userInput.isSideDrawerOpen });
   };
 
+  //allow user to open the bottom drawer only when there have been fonts selected
   const bottomDrawerToggle = () => {
-    setUserInput({ isBottomDrawerOpen: !userInput.isBottomDrawerOpen });
+    if (addedFonts.length > 0) {
+      setUserInput({ isBottomDrawerOpen: !userInput.isBottomDrawerOpen });
+    }
   };
 
   //adds selected fonts to the addedFonts array, but only add unique items
@@ -56,7 +63,6 @@ function App() {
   //clear all the selected fonts from the addedFont array
   const clearAllSelectedFonts = () => {
     setAddedFonts([]);
-    setUserInput({ isBottomDrawerOpen: false });
   };
 
   // remove the corresponding font from the addedFont array
@@ -64,6 +70,22 @@ function App() {
     setAddedFonts(
       addedFonts.filter(currentFont => currentFont !== selectedFont)
     );
+  };
+
+  // close the bottom drawer when all fonts are removed from addedFonts array
+  useEffect(() => {
+    if (addedFonts.length === 0) {
+      setUserInput({ isBottomDrawerOpen: false });
+    }
+  }, [addedFonts]);
+
+  //Add plus signs between words in the name of the font, to be used to retrive the fonts using the url
+  const addPlusSigns = familyName => {
+    if (familyName.indexOf(" ") === -1) {
+      return familyName;
+    } else {
+      return familyName.split(" ").join("+");
+    }
   };
 
   const removeDrawers = () => {
@@ -117,6 +139,7 @@ function App() {
           />
 
           <Main
+            addPlusSigns={addPlusSigns}
             searchFonts={userInput.searchFonts}
             typeSomething={userInput.typeSomething}
             fontSize={userInput.fontSize}
@@ -124,6 +147,7 @@ function App() {
             addFont={addFont}
           />
           <BottomDrawer
+            addPlusSigns={addPlusSigns}
             isBottomDrawerOpen={userInput.isBottomDrawerOpen}
             bottomDrawerToggle={bottomDrawerToggle}
             addedFonts={addedFonts}
