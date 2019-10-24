@@ -44,6 +44,19 @@ function App() {
 
   const [addedFonts, setAddedFonts] = useState([]);
 
+  //load the data in local storage into addedFonts at the first render
+  useEffect(() => {
+    const data = localStorage.getItem("userSelectedFonts");
+    if (data) {
+      setAddedFonts(JSON.parse(data));
+    }
+  }, []);
+
+  //everytime addedFonts change put the addedFonts into local storage
+  useEffect(() => {
+    localStorage.setItem("userSelectedFonts", JSON.stringify(addedFonts));
+  }, [addedFonts]);
+
   const sideDrawerToggle = () => {
     setUserInput({ isSideDrawerOpen: !userInput.isSideDrawerOpen });
   };
