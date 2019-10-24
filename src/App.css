@@ -382,10 +382,11 @@ footer a:visited {
 }
 
 .bottom-drawer .code {
-  padding: 15px;
+  padding: 11px;
   margin-bottom: 30px;
   background: rgba(0, 0, 0, 0.08);
   word-break: break-all;
+  font-family: "Roboto Mono", monospace;
 }
 
 .font-tags {

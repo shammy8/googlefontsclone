@@ -28,7 +28,10 @@ function BottomDrawer({
           addedFonts.length > 0 ? { cursor: "pointer" } : { cursor: "auto" }
         }
       >
-        <p>{addedFonts.length} Families Selected</p>
+        <p>
+          {addedFonts.length} {addedFonts.length === 1 ? "Family" : "Families"}{" "}
+          Selected
+        </p>
       </div>
 
       <div className="bottom-drawer-main">
