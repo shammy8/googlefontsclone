@@ -12,12 +12,12 @@ function Main({
   sticky,
   setSticky
 }) {
-  const [fonts, setFonts] = useState([]);
-  const [numberOfFonts, setNumberOfFonts] = useState(20);
-  const [atBottom, setAtBottom] = useState(false);
-  const [atTop, setAtTop] = useState(true);
+  const [fonts, setFonts] = useState([]); // used to hold the fonts from google fonts API
+  const [numberOfFonts, setNumberOfFonts] = useState(20); // number of fonts to be displayed, initialise at 20
+  const [atBottom, setAtBottom] = useState(false); // state for if user has scrolled to bottom, used to render more fonts in
+  const [atTop, setAtTop] = useState(true); // state for if user has scrolled to top, used to remove the button to go back to top of page when user is at the top of the page
 
-  //fetch all the fonts from Google Fonts API
+  //fetch all the fonts from Google Fonts API and store in the font state
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
@@ -44,7 +44,7 @@ function Main({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  //if at bottom of the screen change atBottom state to true
+  //change states depending where the user has scrolled to
   function handleScroll() {
     if (
       window.innerHeight + document.documentElement.scrollTop + 2 >= // worked before with just !==, then today (22/10/19) stopped working even when I go back to previous commits with GIT???? Now have to change to + 2
@@ -58,7 +58,7 @@ function Main({
       setAtTop(false);
     }
     if (window.pageYOffset > 95) {
-      setSticky(true);
+      setSticky(true); // sticky state is used for sticking searchbar to top of window when user scrolls down
     } else {
       setSticky(false);
     }
@@ -86,14 +86,14 @@ function Main({
       <div
         className={
           sticky
-            ? "fontcards-container sticky-fontcards"
+            ? "fontcards-container sticky-fontcards" // adds another css class when searchbar sticks to top of page, as searchbar changes to position:fixed the fontcards will jump up as they now ignore the space taken by searchbar, so this css class stops all the font card from suddenly jumping
             : "fontcards-container"
         }
       >
         <div
           className="fontcards"
           style={
-            isList
+            isList // changes the amount of columns in the fontcards to one when user changes to list view
               ? { gridTemplateColumns: "1fr" }
               : { gridTemplateColumns: "" }
           }
@@ -113,11 +113,11 @@ function Main({
         </div>
       </div>
       <div
-        className="to-top"
+        className="to-top" // button to scroll to top of page
         onClick={() => {
           window.scrollTo(0, 0);
         }}
-        style={atTop ? { display: "none" } : { display: "flex" }}
+        style={atTop ? { display: "none" } : { display: "flex" }} // the to-top button disappears when user is scrolled to top of page
       >
         <div className="fa fa-long-arrow-up"></div>
       </div>

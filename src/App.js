@@ -41,8 +41,8 @@ function App() {
       isBottomDrawerOpen: false
     }
   );
-  const [sticky, setSticky] = useState(false);
-  const [addedFonts, setAddedFonts] = useState([]);
+  const [sticky, setSticky] = useState(false); //state used to stick the searchbar to the top of browser when user scrolls down
+  const [addedFonts, setAddedFonts] = useState([]); //state for user-selected fonts, used to create a link tag to be put in head tag of html document
 
   //load the data in local storage into addedFonts at the first render
   useEffect(() => {
@@ -92,7 +92,7 @@ function App() {
     }
   }, [addedFonts]);
 
-  //Add plus signs between words in the name of the font, to be used to retrive the fonts using the url
+  // Add plus signs between words in the name of the font, to be used to create link tag for the head tag in html document
   const addPlusSigns = familyName => {
     if (familyName.indexOf(" ") === -1) {
       return familyName;
@@ -101,11 +101,13 @@ function App() {
     }
   };
 
+  // close all drawers
   const removeDrawers = () => {
     setUserInput({ isSideDrawerOpen: false });
     setUserInput({ isBottomDrawerOpen: false });
   };
 
+  //update the states when user enter something int the input boxes / changes font size
   const handleChange = event => {
     const { name, value } = event.target;
     setUserInput({ [name]: value });
@@ -134,7 +136,7 @@ function App() {
         <div>
           <Navbar sideDrawerToggle={sideDrawerToggle} />
           <SideDrawer isSideDrawerOpen={userInput.isSideDrawerOpen} />
-          {userInput.isSideDrawerOpen || userInput.isBottomDrawerOpen ? (
+          {userInput.isSideDrawerOpen || userInput.isBottomDrawerOpen ? ( // add a dark Backdrop when one of the drawer menus are open
             <div>
               <Backdrop removeDrawers={removeDrawers} />
             </div>

@@ -4,7 +4,7 @@ function SideDrawer({ isSideDrawerOpen }) {
   return (
     <div
       className="side-drawer"
-      style={isSideDrawerOpen ? { transform: "translateX(0)" } : null}
+      style={isSideDrawerOpen ? { transform: "translateX(0)" } : null} // slide drawer to the open position
     >
       <div className="google-fonts-title">
         <div className="google-logo"></div>

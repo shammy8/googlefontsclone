@@ -1,12 +1,12 @@
 import React from "react";
 
-function FontTags({ addedFonts, clearSelectedFont }) {
+function FontTags({ font, clearSelectedFont }) {
   return (
     <div className="font-tag">
-      <p>{addedFonts}</p>
+      <p>{font}</p>
       <div
         className="fa fa-minus-circle"
-        onClick={() => clearSelectedFont(addedFonts)}
+        onClick={() => clearSelectedFont(font)} // remove the font from the addedFont state when the minus button is clicked
       ></div>
     </div>
   );

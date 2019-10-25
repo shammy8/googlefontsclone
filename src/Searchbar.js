@@ -57,12 +57,12 @@ function Searchbar({
           <div
             className="fa fa-list"
             onClick={listGridToggle}
-            style={isList ? { display: "none" } : { display: "initial" }}
+            style={isList ? { display: "none" } : { display: "initial" }} // don't display the list icon when in list mode
           ></div>
           <div
             className="fa fa-th"
             onClick={listGridToggle}
-            style={isList ? { display: "initial" } : { display: "none" }}
+            style={isList ? { display: "initial" } : { display: "none" }} // don't display the grid icon when in grid mode
           ></div>
         </div>
 

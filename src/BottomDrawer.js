@@ -9,14 +9,16 @@ function BottomDrawer({
   clearAllSelectedFonts,
   clearSelectedFont
 }) {
+  // join each font with the | symbol, used to create the link tag
   const addOrSigns = addedFonts => {
     return addedFonts.join("|");
   };
+
   return (
     <div
       className="bottom-drawer"
       style={
-        isBottomDrawerOpen
+        isBottomDrawerOpen // slide the bottom drawer up and down
           ? { transform: "translateY(0)" }
           : { transform: "translateY(271px)" }
       }
@@ -41,10 +43,12 @@ function BottomDrawer({
         </div>
 
         <div className="font-tags">
+          {" "}
+          {/* For each font selected by user create a font tag to be display in the bottom drawer */}
           {addedFonts.map(tag => (
             <FontTags
               key={tag}
-              addedFonts={tag}
+              font={tag}
               clearSelectedFont={clearSelectedFont}
             />
           ))}
@@ -58,6 +62,8 @@ function BottomDrawer({
         </p>
 
         <p className="code">
+          {" "}
+          {/* create the link tag */}
           {`<link href="https://fonts.googleapis.com/css?family=${addOrSigns(
             addedFonts.map(font => addPlusSigns(font))
           )}&display=swap" rel="stylesheet">`}
