@@ -35,7 +35,7 @@ header {
   padding-left: 70px;
   padding-right: 50px;
   position: relative;
-
+  margin-bottom: 30px;
   nav {
     .fa-navicon {
       position: absolute;
@@ -115,6 +115,15 @@ header {
 .search-bar-container {
   max-width: 1600px;
   margin: 0 auto;
+  z-index: 50;
+}
+.sticky-search-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: solid 1px rgb(173, 173, 173);
+  box-shadow: 1px 1px 2px rgb(173, 173, 173);
 }
 .search-bar {
   display: grid;
@@ -122,7 +131,7 @@ header {
   place-items: center;
   height: 43px;
   width: 90%;
-  margin: 30px auto;
+  margin: 0px auto;
   padding: 0;
   border: solid rgb(173, 173, 173) 1px;
   border-radius: 30px;
@@ -182,7 +191,11 @@ header {
 }
 .fontcards-container {
   max-width: 1600px;
-  margin: 0 auto 200px auto;
+  margin: 30px auto 200px auto;
+}
+.sticky-fontcards {
+  position: relative;
+  top: 75px;
 }
 .fontcards {
   display: grid;
@@ -190,7 +203,7 @@ header {
   grid-column-gap: 40px;
   grid-row-gap: 50px;
   width: 90%;
-  margin: 30px auto;
+  margin: 0px auto 30px auto;
 }
 .fontcard {
   border-top: rgb(173, 173, 173) solid 1px;

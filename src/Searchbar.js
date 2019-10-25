@@ -8,11 +8,18 @@ function Searchbar({
   toggleTheme,
   listGridToggle,
   isList,
-  reset
+  reset,
+  sticky
 }) {
   return (
-    <div className="search-bar-container">
-      <div className="search-bar">
+    <div
+      className={
+        sticky
+          ? "search-bar-container sticky-search-bar"
+          : "search-bar-container"
+      }
+    >
+      <div className="search-bar" style={sticky ? { border: "none" } : null}>
         <div className="fa fa-search"></div>
 
         <input

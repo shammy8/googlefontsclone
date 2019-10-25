@@ -8,7 +8,9 @@ function Main({
   typeSomething,
   fontSize,
   isList,
-  addFont
+  addFont,
+  sticky,
+  setSticky
 }) {
   const [fonts, setFonts] = useState([]);
   const [numberOfFonts, setNumberOfFonts] = useState(20);
@@ -55,6 +57,11 @@ function Main({
     } else {
       setAtTop(false);
     }
+    if (window.pageYOffset > 95) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
   }
 
   //if atBottom is true run increaseNoOfFonts function
@@ -76,7 +83,13 @@ function Main({
 
   return (
     <div>
-      <div className="fontcards-container">
+      <div
+        className={
+          sticky
+            ? "fontcards-container sticky-fontcards"
+            : "fontcards-container"
+        }
+      >
         <div
           className="fontcards"
           style={

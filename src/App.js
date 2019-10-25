@@ -11,7 +11,7 @@ import "./App.css";
 
 //styles for dark and light mode
 const GlobalStyle = createGlobalStyle`
-  body, .side-drawer, footer, input, select, a:visited {
+  body, .side-drawer, footer, input, select, a:visited, .search-bar-container {
     background-color: ${props => (props.theme.mode ? "#222" : "#FFF")};
     color: ${props => (props.theme.mode ? "#FFF" : "rgb(68, 68, 68)")}
     }
@@ -41,7 +41,7 @@ function App() {
       isBottomDrawerOpen: false
     }
   );
-
+  const [sticky, setSticky] = useState(false);
   const [addedFonts, setAddedFonts] = useState([]);
 
   //load the data in local storage into addedFonts at the first render
@@ -149,6 +149,7 @@ function App() {
             listGridToggle={listGridToggle}
             isList={userInput.isList}
             reset={reset}
+            sticky={sticky}
           />
 
           <Main
@@ -158,6 +159,8 @@ function App() {
             fontSize={userInput.fontSize}
             isList={userInput.isList}
             addFont={addFont}
+            sticky={sticky}
+            setSticky={setSticky}
           />
           <BottomDrawer
             addPlusSigns={addPlusSigns}
