@@ -11,7 +11,7 @@ import "./App.css";
 
 //styles for dark and light mode
 const GlobalStyle = createGlobalStyle`
-  body, .side-drawer, footer, input, select, a:visited, .search-bar-container {
+  body, .side-drawer, footer, input, select, a, .search-bar-container {
     background-color: ${props => (props.theme.mode ? "#222" : "#FFF")};
     color: ${props => (props.theme.mode ? "#FFF" : "rgb(68, 68, 68)")}
     }
