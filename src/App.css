@@ -238,6 +238,7 @@ header nav ul li a {
 
 .search-bar .fa-search:hover {
   cursor: auto;
+  opacity: 1;
 }
 
 @-webkit-keyframes opacity-in {
@@ -494,12 +495,6 @@ footer a:visited {
     width: 100%;
     left: 0;
     right: 0;
-  }
-}
-
-@media only screen and (max-height: 700px) {
-  .to-top {
-    bottom: 22px;
   }
 }
 /*# sourceMappingURL=app.css.map */

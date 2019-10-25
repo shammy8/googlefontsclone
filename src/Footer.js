@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <footer>
-      Coded by Allan Sham | 2019 | Chingu Pre-Work Project |{" "}
+      Coded by Allan Sham | 2019 |{" "}
       <a
         href="https://github.com/shammy8/googlefontsclone"
         target="_blank"

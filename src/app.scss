@@ -179,6 +179,7 @@ header {
   }
   .fa-search:hover {
     cursor: auto;
+    opacity: 1;
   }
 }
 
@@ -387,11 +388,5 @@ footer {
     width: 100%;
     left: 0;
     right: 0;
-  }
-}
-
-@media only screen and (max-height: 700px) {
-  .to-top {
-    bottom: 22px;
   }
 }
