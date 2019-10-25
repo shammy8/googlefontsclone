@@ -113,7 +113,7 @@ header {
 }
 
 .search-bar-container {
-  max-width: 1600px;
+  max-width: 100%;
   margin: 0 auto;
   z-index: 50;
 }
@@ -126,6 +126,7 @@ header {
   box-shadow: 1px 1px 2px rgb(173, 173, 173);
 }
 .search-bar {
+  max-width: 1600px;
   display: grid;
   grid-template-columns: 50px 2fr 2fr 150px 50px 50px 50px;
   place-items: center;

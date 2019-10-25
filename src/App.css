@@ -146,7 +146,7 @@ header nav ul li a {
 }
 
 .search-bar-container {
-  max-width: 1600px;
+  max-width: 100%;
   margin: 0 auto;
   z-index: 50;
 }
@@ -162,6 +162,7 @@ header nav ul li a {
 }
 
 .search-bar {
+  max-width: 1600px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 50px 2fr 2fr 150px 50px 50px 50px;
